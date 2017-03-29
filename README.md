@@ -1,4 +1,4 @@
-## Tom's Super Simple Frontend Boilerplate
+## Tom's Super Simple Static Boilerplate
 
 For when you/I just want to quickly start throwing ideas around, e.g. a static site.
 
