@@ -6,7 +6,7 @@ $(document).ready(function() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
-  camera.position.z = 10;
+  camera.position.z = 5;
 
   var red = new THREE.Color(0xFFFFFF);
   var green = new THREE.Color(0x00FF00);
@@ -16,26 +16,31 @@ $(document).ready(function() {
 
   var loader = new THREE.FontLoader();
 
-  loader.load('./fonts/testFont8.json', function ( font ) {
-    console.log(font)
-  	var textGeom = new THREE.TextGeometry('Nice', {
+  var string = 'N';
+
+  var textMesh = {};
+
+  loader.load('./fonts/testFont8.json', function(font) {
+  	var textGeom = new THREE.TextGeometry(string, {
   		font: font,
   		size: 10,
-  		height: 10,
-  		curveSegments: 10
+  		height: 5
   	});
 
     textGeom.normalize();
+    console.log(textGeom)
 
-    var textMesh = new THREE.Mesh(textGeom, [material1, material2]);
+    textMesh = new THREE.Mesh(textGeom, [material1, material2]);
+    console.log(textMesh)
 
     scene.add(textMesh)
+
+    animate();
   });
 
 	var animate = function () {
 		requestAnimationFrame( animate );
+    textMesh.rotation.y += 0.05;
 		renderer.render(scene, camera);
 	};
-
-	animate();
 });
