@@ -1,8 +1,6 @@
-## Tom's Super Simple Static Boilerplate
+## ThreeJS Lettering
 
-For when you/I just want to quickly start throwing ideas around, e.g. a static site.
-
-I'll think of a snappier title at some point..
+An experiment with 3D letters
 
 ```
 git clone git@github.com:tommers-walker/ssb.git .
