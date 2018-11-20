@@ -126,24 +126,6 @@ $(document).ready(function() {
 
   var group = new THREE.Group();
 
-  // Guidance line
-  // var lineMaterial = new THREE.LineBasicMaterial( {
-  //   color: 0xffffff
-  // });
-  //
-  // var lineGeometry = new THREE.Geometry();
-  // lineGeometry.vertices.push(
-  //   new THREE.Vector3(0, 0, 0 ),
-  //   new THREE.Vector3(100, 0, 0 )
-  // );
-  //
-  // lineGeometry.center()
-  //
-  // var line = new THREE.Line(lineGeometry, lineMaterial);
-  // line.position.y = -0.5;
-  // scene.add(line);
-  //
-
   function letterFunction(letter, font) {
     var textGeom = new THREE.TextGeometry(letter.letter, {
       font: font,
@@ -159,10 +141,6 @@ $(document).ready(function() {
     group.add(textMesh)
 
     return textMesh;
-
-    // TweenLite.set(textMesh.material, {opacity: 0});
-    // tl.add(TweenLite.to(textMesh.material, 0.5, {opacity: 1}), "-=0.25");
-    // tl.add(TweenLite.to(textMesh.rotation, 1, {y: -(Math.PI * 2), ease: Back.easeOut.config(1.7)}), "-=0.48");
   }
 
   function tween(letterMesh, x) {
@@ -195,18 +173,5 @@ $(document).ready(function() {
     scene.add(group);
 
     tl.restart();
-
-    // var textGeom = new THREE.TextGeometry(string, {
-    //   font: font,
-    //   size: 1,
-    //   height: 0.5
-    // });
-    //
-    // textGeom.center();
-    // var textMesh = new THREE.Mesh(textGeom, [material1, material2]);
-    //
-    // group.add(textMesh)
-    // scene.add(group)
-
   });
 });
